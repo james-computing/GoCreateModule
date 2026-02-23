@@ -2,11 +2,20 @@ package main
 
 import (
 	"fmt"
+	"log"
 
 	"example.com/greetings"
 )
 
 func main() {
-	message := greetings.Hello("John")
+	log.SetPrefix("greetings: ")
+	// Remove time stamp and source information
+	log.SetFlags(0)
+
+	message, err := greetings.Hello("")
+	if err != nil {
+		log.Fatal(err)
+		return
+	}
 	fmt.Println(message)
 }
