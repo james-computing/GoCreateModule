@@ -12,7 +12,7 @@ func main() {
 	// Remove time stamp and source information
 	log.SetFlags(0)
 
-	message, err := greetings.Hello("")
+	message, err := greetings.Hello("John")
 	if err != nil {
 		log.Fatal(err)
 		return
